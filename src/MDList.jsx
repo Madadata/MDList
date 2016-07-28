@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import styles from './MDList.css';
 
-const ListHeader = (props) => (
+export const ListHeader = (props) => (
   <div className={styles.listPanel__Header}>
     <img src={props.img} role="presentation" />
     <div>
@@ -16,7 +16,7 @@ ListHeader.propTypes = {
   img: PropTypes.string,
 };
 
-const ListInfo = (props) => (
+export const ListInfo = (props) => (
   <div className={styles.listPanel__Info}>
     {
       props.data.map((kv) =>
