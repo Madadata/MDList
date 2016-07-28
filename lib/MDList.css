@@ -1,0 +1,40 @@
+:local .listPanel {
+    cursor: pointer;
+    font-size: 24px;
+    color: #4a4a4a;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    border-bottom: solid 1px #ccc;
+}
+
+:local .listPanel__Info {
+    width: 500px;
+    margin-left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+
+:local .listPanel__Info > * {
+    width: 120px;
+}
+
+:local .listPanel__Tag {
+    font-size: 14px;
+    color: #9b9b9b;
+    float: left;
+}
