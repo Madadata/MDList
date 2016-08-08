@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import styles from './MDList.css';
+import _ from 'lodash';
 
 export const ListHeader = (props) => (
   <div className={styles.listPanel__Header}>
@@ -16,11 +17,11 @@ ListHeader.propTypes = {
   img: PropTypes.string,
 };
 
-export const ListInfo = (props) => (
+export const ListInfo = ({ data }) => (
   <div className={styles.listPanel__Info}>
     {
-      props.data.map((kv) =>
-        <div>
+      data.map((kv, i) =>
+        <div key={_.get(kv, 'id', i)}>
           <div>{kv.value}</div>
           <div className={styles.listPanel__Tag}>{kv.tag}</div>
         </div>)
@@ -31,10 +32,10 @@ ListInfo.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
 };
 
-export const ListItem = (props) =>
+export const ListItem = ({ header, info, img }) =>
   <div className={styles.listPanel}>
-    <ListHeader data={ props.header } img={ props.img } />
-    <ListInfo data={ props.info } />
+    <ListHeader data={header} img={img} />
+    <ListInfo data={info} />
   </div>;
 
 ListItem.propTypes = {
